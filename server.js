@@ -5,6 +5,9 @@ const app = express();
 
 const PORT = 3000;
 
+// serve static files from the 'public' directory
+app.use(express.static('./public'));
+
 // set up a GET request handler for the root URL
 app.get('/', (req, res) => {
     res.send('Hello, World!');
@@ -19,3 +22,4 @@ app.get('/contact', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
